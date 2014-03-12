@@ -1,46 +1,29 @@
-EBNF-Diagram
-------------
+# EBNF-Diagram
+
 jQuery plugin that plots syntax diagrams (aka railroad diagrams) out of a formal syntax description.
 
+# Building
 
-Getting it
-----------
-You can checkout the source code at git://dev.outerthought.org/outerthought/ebnfdiagram.git
-
-  $ git pull git://dev.outerthought.org/outerthought/ebnfdiagram.git
-
-
-Building
---------
 There is no real automated build in place, sorry for that. What you need to do is:
 
 0. Get a js interpreter you can operate from the command line.
 
-   We recommend rhino, the more interesting platforms have it on board or at least in the package repositories.
+We recommend rhino, the more interesting platforms have it on board or at least in the package repositories.
 
 1. Build the parser
 
-   mkdir -p target/js;
-   cd tools/jscc; 
-   rhino jscc.js -o ../../target/js/ebnf-jq.js ../../src/main/syntax/ebnf-jq.par; 
-   cd -;
+    ./build.sh
 
+# Testing
 
-There is a limited automation of these build-steps captured in some bash files, they are provided as is:
-  ./build.sh
-
-
-Testing
--------
-Just point your browser to test/webenv/test.html.
+Just point your browser to src/test/webenv/test.html.
 
 Add some syntax in the textarea and push the buttons.
 
 TODO: we think about providing some qunit testing. 
 
+# Documentation
 
-Documentation
--------------
 The code itself is currently your best source of documentation. 
 Given the total size of the project source it might be hard to make a more condense variant :)
 
@@ -54,11 +37,7 @@ Also:
   * the src/desgin folder contains a scan of sketches that help explain how some of the internal drawing stuff is happening.
   * js/cc and jQuery provide more docs that might come around handy. Check the file CREDITS for pointers.
 
-
-Future Work
------------
-Is coordinated through git and track. 
-See: http://dev.outerthought.org/trac/outerthought_ebnfdiagram
+# Future Work
 
 Next to the things you already thought of yourself, here is a short list of things to be added:
  * better build framework - and make it cross platform 
